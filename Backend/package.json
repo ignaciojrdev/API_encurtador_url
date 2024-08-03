@@ -1,0 +1,25 @@
+{
+  "name": "api_encurtador_url",
+  "version": "1.0.0",
+  "description": "Api que retorna uma url encurtada. Opcional: Autenticação onde é retornado uma lista de urls encurtadas.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon config/server/Server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.2",
+    "mysql2-promise": "^0.1.4",
+    "uuid": "^10.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+Tabelas do banco de dados
+
+user
+    - id                varchar(36) - pk
+    - name              varchar(20) - not null
+    - password          varchar(20) - not null
+    - token             varchar(90) - not null
+    - createdAt()       DATE        - not null - not unique - DEFAULT SYSDATE
+
+urls
+    - id                varchar(36)     - pk
+    - userCode          varchar(36)     - null     - not unique
+    - origin_url        varchar(10000)  - not null - unique
+    - short_url         varchar(6)      - not null - unique
+    - access_counter    Int             - not null - not unique - DEFAULT 0
+    - isDeleted         Date            - null     - not unique - null

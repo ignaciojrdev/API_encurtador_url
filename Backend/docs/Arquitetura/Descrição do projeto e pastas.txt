@@ -1,0 +1,33 @@
+A API - encutador de URLs - foi desenvolvida utilizando o padrão de arquitetura mais conhecido como: Arquitetura Limpa.
+
+A organização de pastas segue a seguinte estruturação:
+    -   config: 
+        -- server: Cria o servidor da API na porta especificada pelo arquivo `.env` .
+
+    -   docs: Documentação detalhada do projeto (arquitetura, organização, etc).
+
+    -   migrations: Scripts de migração de banco de dados.
+
+    -   src: Diretório principal do código-fonte.
+        -- domain: Lógica de negócio central.
+            ---- entities: Entidades principais do sistema.
+            ---- usecases: Casos de uso que descrevem as interações entre entidades.
+            ---- repositories: Interfaces para persistência de dados.
+
+        -- application: Lógica de aplicação.
+            ---- dtos: Objetos de Transferência de Dados.
+            ---- services: Serviços que implementam os casos de uso.
+            ---- interfaces: Interfaces adicionais necessárias.
+
+        -- infrastructure: Persistência e serviços externos.
+            ---- persistence: Implementações de repositórios e ORM.
+            ---- external-services: Integração com APIs e serviços externos.
+            ---- configuration: Configurações gerais do sistema.
+
+        -- presentation: Interface com o usuário ou API.
+            ---- controllers: Controladores que gerenciam as requisições.
+            ---- routes: Roteamento e definição de endpoints.
+
+    -   tests: Testes automatizados.
+        -- unit: Testes unitários.
+        -- integration: Testes integração.

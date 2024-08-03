@@ -1,7 +1,7 @@
 import { UrlService } from '../../application/services/UrlService.js';
 import { UrlDTO } from '../../application/dtos/UrlDTO.js';
 import { UserDTO } from '../../application/dtos/UserDTO.js';
-//importar os dtos e passar para o service
+
 class UrlController{
     constructor(){
         this.UrlService = new UrlService();
@@ -15,8 +15,8 @@ class UrlController{
         if(!URL)
             return response.status(400).json({message: 'Parameter `URL` is required. Please, follow API specification.'});
         try{
-            userDTO = new UserDTO(null, null, null, baerer_token, null);
-            urlDTO = new UrlDTO(null, userDTO.id, URL, null, 0, null);
+            userDTO = new UserDTO(null, null, null, baerer_token, null, null);
+            urlDTO = new UrlDTO(null, userDTO.id, URL, null, 0, null, null);
             await this.UrlService.save_short_url(urlDTO, userDTO);   
         }catch(e){
             let { message } = e;

@@ -1,15 +1,21 @@
-export class UserDTO {
+class UserDTO {
     constructor(
         id,
-        name,
+        email,
         password,
-        token,
-        createdAt
+        bearer_token,
+        updated,
+        deleted
     ) {
         this.id = id;
-        this.name = name;
+        this.email = email;
         this.password = password;
-        this.token = token;
-        this.createdAt = createdAt;
+        this.bearer_token = bearer_token;
+        this.updated = updated;
+        this.deleted = deleted;
     }
+}
+
+export { 
+    UserDTO
 }

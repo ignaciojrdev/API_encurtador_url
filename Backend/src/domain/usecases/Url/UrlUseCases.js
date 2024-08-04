@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-
+import dotenv from 'dotenv';
 class UrlUseCases{
     constructor(repository) {
         this.repository = repository
@@ -11,19 +11,22 @@ class UrlUseCases{
         return shortUrl;
     }
 
+    createShortUrlFormat = (shortUrl) => {
+        return process.env.BASEURL + '/url/' + shortUrl;
+    }
+
     createIdShortUrlUseCase = async() =>{
         const id = uuidv4();
         return id
     }
 
     saveShortUrlUseCase = async(urlDTO) =>{
-        //this.repository.save(urlDTO) e salvar no banco
+        return await this.repository.saveShortUrl(urlDTO.id, urlDTO.user_id, urlDTO.origin_url, urlDTO.short_url, urlDTO.access_counter, urlDTO.deleted, urlDTO.updated);
     }
 
-    createDateUrlUseCase = async() =>{
-        //parei aqui
+    getShortUrlUseCase = async (urlDTO) =>{
+        return await this.repository.getUrlByShortURLWithoutId(urlDTO.short_url);
     }
-
 }
 
 export{

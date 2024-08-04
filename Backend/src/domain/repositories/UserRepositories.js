@@ -8,7 +8,7 @@ class UserRepository{
     
     getUserByToken = async(token) => {
         const connection = await this.database.createConnection(this.config);
-        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.BEARER_TOKEN = ?`, [token]);
+        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.BEARER_TOKEN = ? AND USER.DELETED IS NULL`, [token]);
         connection.end();
         if(rows.length == 0){
             return null;
@@ -19,7 +19,7 @@ class UserRepository{
 
     getUserById = async(id) => {
         const connection = await this.database.createConnection(this.config);
-        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.ID = ?`, [id]);
+        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.ID = ? AND USER.DELETED IS NULL`, [id]);
         connection.end();
         if(rows.length == 0){
             return null;
@@ -30,7 +30,7 @@ class UserRepository{
 
     getUserByEmail = async(email) => {
         const connection = await this.database.createConnection(this.config);
-        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.EMAIL = ?`, [email]);
+        const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.EMAIL = ? AND USER.DELETED IS NULL`, [email]);
         connection.end();
         if(rows.length == 0){
             return null;
@@ -49,14 +49,14 @@ class UserRepository{
 
     update_user = async(id, email, password, token, updated) => {
         const connection = await this.database.createConnection(this.config);
-        await connection.execute(`UPDATE USER SET EMAIL = ?, PASSWORD = ?, BEARER_TOKEN = ?, UPDATED = ? WHERE USER.ID = ?`, 
+        await connection.execute(`UPDATE USER SET EMAIL = ?, PASSWORD = ?, BEARER_TOKEN = ?, UPDATED = ? WHERE USER.ID = ? AND USER.DELETED IS NULL`, 
                                 [email, password, token, updated, id]);
         connection.end();
     }
 
     delete_user = async(id) => {
         const connection = await this.database.createConnection(this.config);
-        await connection.execute(`DELETE FROM USER WHERE USER.ID = ?`, 
+        await connection.execute(`UPDATE USER SET DELETED = SYSDATE() WHERE USER.ID = ?`, 
                                 [id]);
         connection.end();
     }

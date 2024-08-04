@@ -10,6 +10,10 @@ class UserService{
         return await this.UserUseCases.getUserByIdUseCase(UserDTO);
     }
 
+    getUserByTokenUseCase = async (UserDTO) => {
+        return await this.UserUseCases.getUserByTokenUseCase(UserDTO);
+    }
+
     save_user = async (UserDTO) => {
         UserDTO.id = await this.UserUseCases.getNextUUID();
         UserDTO.password = await this.UserUseCases.getHashedPassword(UserDTO.password);
@@ -37,6 +41,9 @@ class UserService{
         return {id: UserDTO.id, bearer_token: UserDTO.bearer_token}
     }
 
+    validateEmailPassword = async (email, password, id) => {
+        return await this.UserUseCases.validateEmailPassword(email, password, id);
+    }
 }
 
 export { 

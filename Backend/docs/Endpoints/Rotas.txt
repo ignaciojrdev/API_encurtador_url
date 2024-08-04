@@ -14,10 +14,14 @@ Rotas existentes no sistema - refazer apenas em ingles ou portugues
 
         /:id -> http method = put
             request header baerer token
+            OR
+            name + password
             response: HTTP Code + JSON(Message: String (Error/Success));
 
         /:id -> http method = delete
             request header baerer token
+            OR
+            name + password
             response: HTTP Code + JSON(Message: String (Error/Success));
 
     /shortener

@@ -10,7 +10,7 @@ class UserUseCases{
 
     getUserByTokenUseCase = async(userDTO) => {
         let user = await this.repository.getUserByToken(userDTO.bearer_token);
-        if(!user){
+        if(!user || (user.id != userDTO.id)){
             throw new Error('User not found.');
         }
         return user;
@@ -69,6 +69,23 @@ class UserUseCases{
     getHashedPassword = async (password) => {
         return await bcrypt.hash(password, 10);
     }
+
+    validateEmailPassword = async (email, password, id) => {
+        let user = null;
+        try{
+            user =  await this.getUserByEmailUseCase({email: email});
+            console.log(user, id);
+            if(user.id != id){
+                throw new Error('Invalid access. The e-mail have a diferent id.');
+            }
+        }catch(e){
+            throw new Error('Invalid access. Incorrect e-mail.');
+        }
+        let match = await bcrypt.compare(password, user.password);
+        if(!match){
+            throw new Error('Invalid access. Incorrect password.');
+        }
+    }    
 }
 
 export { 

@@ -19,8 +19,6 @@ class UserController{
             userDTOFound = await this.UserService.get_user(userDTO);   
         }catch(e){
             let { message } = e;
-            
-            console.log(e);
             return response.status(500).json({ 'message': 'Error: ' +  message});
         }
         return response.status(200).json({message: 'Success: User was found.', user: {'id': userDTOFound.id, 'email': userDTOFound.email, 'bearer_token': userDTOFound.bearer_token, 'last_update': userDTOFound.updated, 'deleted': userDTOFound.deleted ? userDTOFound.deleted : false}});

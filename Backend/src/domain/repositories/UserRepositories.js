@@ -10,7 +10,6 @@ class UserRepository{
         const connection = await this.database.createConnection(this.config);
         const [rows] = await connection.execute(`SELECT * FROM USER WHERE USER.BEARER_TOKEN = ?`, [token]);
         connection.end();
-        console.log(rows);
         if(rows.length == 0){
             return null;
         }

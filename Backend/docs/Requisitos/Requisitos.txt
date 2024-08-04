@@ -1,48 +1,43 @@
 Entrega:
-    USER/URL - 01 - Construir uma estrutura de tabelas que faça sentido para o projeto usando um banco relacional. - FEITO
-    USER - 02 - Construir endpoints para autenticação de e-mail e senha que retorna um Bearer Token. -> FEITO
-    URL - 03 - Construir apenas um endpoint para encurtar o URL, ele deve receber um URL de origem e deve aceitar requisições com e sem autenticação, deve retornar o url encurtado - incluindo o domínio..
-    04 - Definir o que deve e não deve ser variável de ambiente..
+
+
+
     URL - 05 - Construir endpoints que aceitam apenas requisições autenticadas:
-            Listagem de URL Encurtados pelo usuário com contabilização de clicks
-            Deletar URL Encurtado
+            Listagem de URL Encurtados pelo usuário com contabilização de clicks - FEITO
+            Deletar URL Encurtado - FEITO
             Atualizar a origem de um URL encurtado.
+
     06 - README ou CONTRIBUTING explicando como rodar o projeto.
-    URL - 07 - Construir um endpoint que ao receber um URL encurtado, redirecione o usuário para o URL de origem e contabilize.
-    USER/URL - 08 - Maturidade 2 da API REST
 
 
 ** Entrega - opcional:
-    03 - API está documentada com OPEN API ou Swagger
-    04 - Ter validação de entrada em todos os lugares necessários.
-    07 - Configurar um api gateway como KrankeD na frente dos serviços.
+    02 - testes unitarios;
+    03 - API está documentada;
+    04 - testes com as versões do node + antigas
     08 - Utilizar changelog com a realidade do seu desenvolvimento.
-    09 - Git tags definindo versões de release, por exemplo release 0.1.0 como encurtador criado, 0.2.0 como autenticação, 0.3.0 como operações de usuário no encurtador, 0.4.0 como contabilização de acessos.
-    14 - Construir funcionalidades a mais que acredite ser interessante para o “domínio do negócio” da aplicação.
-    15 - Definir e assegurar quais versões do NodeJS são aceitas no projeto. 
-    17 - Código tolerante a falhas.
+    15 - Definir e assegurar quais versões do NodeJS são aceitas no projeto.
+
 
  
 Desenvolvimento:
-    01 - Deverá ser implementado um projeto com NodeJS na última versão estável, sendo construído como API REST. Leve em consideração que o sistema será implementado em uma infraestrutura que escala verticalmente. - ok
-    USER - 02 - O sistema deve possibilitar o cadastro de usuários e autenticação dos mesmos. - feito
-    URL - 03 - O sistema deve possibilitar que a partir de um url enviado, ele seja encurtado para no máximo 6 caracteres. Exemplo: - feito
-            Entrada: https://teddy360.com.br/material/marco-legal-das-garantias-sancionado-entenda-o-que-muda/
-            Saída: http://localhost/aZbKq7
-    04 - Qualquer um pode solicitar que o URL seja encurtado e para encurtar deve existir apenas um endpoint, mas caso seja um usuário autenticado, o sistema deve registrar que o URL pertence ao usuário. 
-    05 - Um usuário autenticado pode listar, editar o endereço de destino e excluir URLs encurtadas por ele.
-    06 - Todo acesso a qualquer URL encurtado deve ser contabilizado no sistema.
-    07 - Quando um usuário listar os urls deve aparecer na listagem a quantidade de cliques.
-    URL/USER - 08 - Todos os registros devem ter uma forma de saber quando foram atualizados. - FEITO
-    URL/USER - 09 - Os registros só poderão ser deletados logicamente do banco, ou seja, deverá ter um campo que guarda a data de exclusão do registro, caso ela esteja nula é porque ele é válido, caso esteja preenchida é porque ele foi excluído e nenhuma operação de leitura ou escrita pode ser realizada por ele.
+    05 - Um usuário autenticado pode listar, editar o endereço de destino e excluir URLs encurtadas por ele. (2/3)
+    
+
+
+
+#melhorias
+
 
 
 gerar o jwt_secret ->  node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
-
-#melhorias
 
 
 USAR ORM PARA MITIGAR SQL_INJECTION
 uso do expiresIn no jwt
 uso do Typescript para tipar as variaveis, parametros, retornos
+ideias: redis para otimizar busca no servidor
 
+
+
+user -> preciso do id para verificar se o id passado na url (que pode ser informado de outro usuario) é correspondente ao id do bearer_token
+adicionar console.log nos catchs de cada controller

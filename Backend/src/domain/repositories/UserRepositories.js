@@ -25,6 +25,7 @@ class UserRepository{
             return null;
         }
         let row = rows[0];
+        
         return new UserDTO(row['id'], row['email'], row['password'], row['bearer_token'], row['updated'], row['deleted']); 
     }
 

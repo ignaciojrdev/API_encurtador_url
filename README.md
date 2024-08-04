@@ -1,14 +1,13 @@
 <h1>Sistema que gera uma URL encurtada</h1>
-<p>Uma API para gerar uma URL encurtada, com banco de dados MySql</p>
+<p>Uma API para gerar uma URL encurtada, com banco de dados MySql.</p>
 
 <h2>Pré-requisitos</h2>
 <p>
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas e realizar suas configurações:<a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>. 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas e realizar suas configurações: <a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>. 
 Além disto é bom ter um editor para trabalhar com o código como <a href="https://code.visualstudio.com/">VSCode</a>
 </p>
 
-<h2>Depois de clonar o projeto em sua maquina:</h2>
-<h2>Acesse a pasta do projeto no terminal/cmd</h2>
+<h2>Depois de clonar o projeto em sua maquina, acesse a pasta do projeto no terminal/cmd</h2>
 
 <h3>Vá até "backend"</h3>
 $ cd .\backend\
@@ -16,8 +15,9 @@ $ cd .\backend\
 <h3>Instale as dependências</h3>
 $ npm install
 
-<h3 Crie o arquivo .env em API_encurtador_url/Backend/, onde será necessário incluir as seguintes informações:>
+<h3>Crie o arquivo .env em API_encurtador_url/Backend/, onde será necessário incluir as seguintes informações:<h3>
 <p>
+    
     PORT_SERVER = 3030                              # porta que será utilizada para subir a aplicação; *Recomedo copiar essa linha
     BASEURL = http://localhost:3030                 # url base para utilização das urls criadas; *Recomedo copiar essa linha
 
@@ -34,9 +34,9 @@ $ npm install
 <h3>Ainda na pasta "backend", execute o seguinte comando e a API estará disponível em "http://localhost:3030"</h3>
 $ node config/server/Server.js
 
-<h3>Importe as migrations para o MySQL Workbench de API_encurtador_url/Backend/migrations<h3>
+<h3>Importe o esquema do banco de dados para o MySQL Workbench de API_encurtador_url/Backend/migrations<h3>
 
-<p>Exemplo abaixo:<p>
+<p>*Exemplo abaixo:<p>
 <p>https://www.youtube.com/watch?v=q0EBUXTQQRY&t=9s<p>
 
 <h3>🛠 Tecnologias e bibliotecas</h3>
@@ -68,6 +68,7 @@ $ node config/server/Server.js
 <P>Para mais informações sobre a API, acesse o arquivo API_encurtador_url/Backend/docs.<P>
 
 <P>
+    
     Em API_encurtador_url/Backend/docs/Arquitetura/Descrição do projeto e pastas.txt temos a explicação da arquitetura utilizada.
 
     Em API_encurtador_url/Backend/docs/DB/Download do mysql......txt temos um link para o youtube onde realizo o download e instalação do mysql workbench. O vídeo autoral, foi criado para ajudar alguns amigos meus que há alguns meses estavam iniciando na área de programação.

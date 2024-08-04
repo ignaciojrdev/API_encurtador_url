@@ -3,7 +3,7 @@
 
 <h2>Pré-requisitos</h2>
 <p>
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas e realizar suas configurações:<a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>. 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas e realizar suas configurações: <a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>. 
 Além disto é bom ter um editor para trabalhar com o código como <a href="https://code.visualstudio.com/">VSCode</a>
 </p>
 

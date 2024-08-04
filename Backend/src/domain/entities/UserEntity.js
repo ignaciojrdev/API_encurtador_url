@@ -1,9 +1,10 @@
 export class User{
-    constructor(id, name, password, token, created_at){
+    constructor(id, name, password, token, updated, deleted){
         this.id = id;
         this.name = name;
         this.password = password;
         this.token = token;
-        this.created_at = created_at;
+        this.updated = updated;
+        this.deleted = deleted;
     }
 }

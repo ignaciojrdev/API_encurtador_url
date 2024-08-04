@@ -1,9 +1,9 @@
 import express from 'express';
+import { UserController } from '../../../controllers/UserController.js'
 var router = express.Router();
-
-//router.post('/', UsrController.get_all_users_by_organization_controller); //GET /organization/All -> READ All users by org 
-//router.get('/:id', UsrController.get_one_users_by_organization_and_codeUser_controller); //GET /organization/{code} -> READ one user
-//router.post('/:id', UsrController.save_one_users_by_organization_and_codeUser_and_name_controller); // POST /organization/{code} -> SAVE one user
-//router.put('/:id', UsrController.update_one_users_by_organization_and_codeUser_and_name_controller); // PUT /organization/{code} -> UPDATE one user
-
+const User_Controller = new UserController();
+router.post('/', User_Controller.save_user);
+router.get('/:id', User_Controller.get_user);
+router.delete('/:id', User_Controller.delete_user); 
+router.put('/:id', User_Controller.update_user);
 export default router;

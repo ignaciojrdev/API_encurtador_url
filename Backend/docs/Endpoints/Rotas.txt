@@ -2,6 +2,8 @@ Rotas existentes no sistema - refazer apenas em ingles ou portugues
 
     /user
         /-> http method = post
+            request: name: required
+            request: password: required
             response: HTTP Code + JSON(Message: String (Error/Success), Token: String);
 
         /:id -> http method = get

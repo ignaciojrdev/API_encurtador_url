@@ -36,7 +36,7 @@ $ node config/server/Server.js
 
 <h3>Importe o esquema do banco de dados para o MySQL Workbench de API_encurtador_url/Backend/migrations<h3>
 
-<p>Exemplo abaixo:<p>
+<p>*Exemplo abaixo:<p>
 <p>https://www.youtube.com/watch?v=q0EBUXTQQRY&t=9s<p>
 
 <h3>🛠 Tecnologias e bibliotecas</h3>

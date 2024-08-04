@@ -7,8 +7,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 Além disto é bom ter um editor para trabalhar com o código como <a href="https://code.visualstudio.com/">VSCode</a>
 </p>
 
-<h2>Depois de clonar o projeto em sua maquina:</h2>
-<h2>Acesse a pasta do projeto no terminal/cmd</h2>
+<h2>Depois de clonar o projeto em sua maquina, acesse a pasta do projeto no terminal/cmd</h2>
 
 <h3>Vá até "backend"</h3>
 $ cd .\backend\

@@ -34,7 +34,7 @@ $ npm install
 <h3>Ainda na pasta "backend", execute o seguinte comando e a API estará disponível em "http://localhost:3030"</h3>
 $ node config/server/Server.js
 
-<h3>Importe as migrations para o MySQL Workbench de API_encurtador_url/Backend/migrations<h3>
+<h3>Importe o esquema do banco de dados para o MySQL Workbench de API_encurtador_url/Backend/migrations<h3>
 
 <p>Exemplo abaixo:<p>
 <p>https://www.youtube.com/watch?v=q0EBUXTQQRY&t=9s<p>

@@ -54,6 +54,13 @@ class UserRepository{
         connection.end();
     }
 
+    delete_user = async(id) => {
+        const connection = await this.database.createConnection(this.config);
+        await connection.execute(`DELETE FROM USER WHERE USER.ID = ?`, 
+                                [id]);
+        connection.end();
+    }
+
 }
 
 export { 

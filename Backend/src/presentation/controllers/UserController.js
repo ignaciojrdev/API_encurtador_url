@@ -57,7 +57,7 @@ class UserController{
         if(password.length < 5 || password.length > 20 )
             return response.status(400).json({message: 'Parameter `password` is required and need have between 5-20 characters. Please, follow API specification.'});
         let userDTO = null;
-        let userUpdated = null
+        let userUpdated = null;
         try{
             userDTO = new UserDTO(id, email, password, null, null, null);
             userUpdated = await this.UserService.update_user(userDTO);   
@@ -68,6 +68,20 @@ class UserController{
         return response.status(201).json({message: 'Success: User was updated.', 'id': userUpdated.id, 'bearer_token': userUpdated.bearer_token});
     }
 
+    delete_user = async (request, response) => {
+        const { id } = request.params;
+        if(!id)
+            return response.status(400).json({message: 'Parameter `id` is required. Please, follow API specification.'});
+        let userDTO = null;
+        try{
+            userDTO = new UserDTO(id, null, null, null, null, null);
+            await this.UserService.delete_user(userDTO);   
+        }catch(e){
+            let { message } = e;
+            return response.status(500).json({ 'message': 'Error: ' +  message});
+        }
+        return response.status(201).json({message: 'Success: User was deleted.'});
+    }
 }
 export { 
     UserController

@@ -17,12 +17,9 @@ A organização de pastas segue a seguinte estruturação:
         -- application: Lógica de aplicação.
             ---- dtos: Objetos de Transferência de Dados.
             ---- services: Serviços que implementam os casos de uso.
-            ---- interfaces: Interfaces adicionais necessárias.
 
         -- infrastructure: Persistência e serviços externos.
             ---- persistence: Implementações de repositórios e ORM.
-            ---- external-services: Integração com APIs e serviços externos.
-            ---- configuration: Configurações gerais do sistema.
 
         -- presentation: Interface com o usuário ou API.
             ---- controllers: Controladores que gerenciam as requisições.
@@ -30,4 +27,3 @@ A organização de pastas segue a seguinte estruturação:
 
     -   tests: Testes automatizados.
         -- unit: Testes unitários.
-        -- integration: Testes integração.

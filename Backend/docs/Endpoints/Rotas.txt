@@ -1,52 +1,79 @@
-Rotas existentes no sistema - refazer apenas em ingles ou portugues
+Rotas existentes no sistema
 
     /user
         /-> http method = post
-            request: name: required
-            request: password: required
+            request body: name user  required
+            request body: password user required
+
             response: HTTP Code + JSON(Message: String (Error/Success), Token: String);
 
         /:id -> http method = get
-            request header baerer token
-            OR
-            name + password
+            request param id user required
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+
             response: HTTP Code + JSON(Message: String (Error/Success), Info: Array);
 
         /:id -> http method = put
-            request header baerer token
-            OR
-            name + password
+            request param id user required
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+            
             response: HTTP Code + JSON(Message: String (Error/Success));
 
         /:id -> http method = delete
-            request header baerer token
-            OR
-            name + password
+            request param id required
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+
             response: HTTP Code + JSON(Message: String (Error/Success));
 
-    /shortener
+    /url
         / -> http method = post
             request body: URL required
             request header baerer token optional
             response body: HTTP Code + JSON(message: String (Error/Success), shortURL: String);
 
-        / -> http method = get
+        /:id -> http method = get
             request body: shortURL required
             request header baerer token optional
             response body: HTTP Code + JSON(message: String (Error/Success), shortURL: String);
 
-    /user/{:id_user}/shortener/ - required auth
-        {:id_user} -> http method = get 
-            request query param: user id required
-            request header baerer token / email e senha
-            response body: HTTP Code + JSON(Message: String (Error/Success), Info: Array); -> lista de urls com autenticação
+    /user/:id_user/shortener/ - required auth
+        / -> http method = get 
+            request param: user id required
 
-        {:id_user}/{:id_shortUrl} -> http method = delete
-            request query param: user id e short url  required
-            request header baerer token / email e senha
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+
+            response body: HTTP Code + JSON(Message: String (Error/Success), Info: Array);
+
+        /:id_shortUrl -> http method = delete
+            request param: user id required
+            request param: short url required
+
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+
             response body: HTTP Code + JSON(Message: String (Error/Success));
 
-        {:id_user}/{:id_shortUrl} -> http method = put
-            request query param: user id e short url required (url de origem será atualizada? )
-            request header baerer token / email e senha
+        /:id_shortUrl -> http method = put
+            request param: user id required
+            request param: short url required
+
+            request header baerer token required
+                OR
+            request body: name user required
+            request body: password user required
+
             response body: HTTP Code + JSON(Message: String (Error/Success));

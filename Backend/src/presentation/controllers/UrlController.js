@@ -12,12 +12,12 @@ class UrlController{
 
     save_short_url = async(request, response) => {
         let urlDTO = null;
-        const { URL, id } = request.body;
-        
+        const { URL } = request.body;
+        const { accessValidate } = request.body;
         if(!URL)
             return response.status(400).json({message: 'Parameter `URL` is required. Please, follow API specification.'});
         try{
-            urlDTO = new UrlDTO(null, id ? id : null, URL, null, 0, null, null);
+            urlDTO = new UrlDTO(null, accessValidate, URL, null, 0, null, null);
             urlDTO = await this.UrlService.save_short_url(urlDTO); 
         }catch(e){
             let { message } = e;

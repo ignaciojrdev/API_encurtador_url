@@ -8,12 +8,12 @@ class AuthController{
         this.AuthService = new UserService(this.AuthRepository);
     }
 
-    authenticationUserOnlyBearerToken = async (bearer_token, id) =>{
-        if(!!bearer_token && !!id){
+    authenticationUserOnlyBearerToken = async (bearer_token) =>{
+        if(!!bearer_token){
             let returnBoolToken;
             try{
-                await this.AuthService.getUserByTokenUseCase({bearer_token: bearer_token, id: id});  
-                returnBoolToken = true; 
+                let userDTO = await this.AuthService.getUserByTokenUseCase({bearer_token: bearer_token});  
+                returnBoolToken = userDTO.id; 
             }catch(e){
                 returnBoolToken = false;
             }
@@ -23,12 +23,12 @@ class AuthController{
         } 
     }
 
-    authenticationUserOnlyEmailPassword = async(email, password, id) => {
-        if(!!email && !!password && !!id){
+    authenticationUserOnlyEmailPassword = async(email, password) => {
+        if(!!email && !!password){
             let returnBoolEmailPassword;
             try{
-                await this.AuthService.validateEmailPassword(email, password, id);   
-                returnBoolEmailPassword = true;
+                let userDTO = await this.AuthService.validateEmailPassword(email, password);   
+                returnBoolEmailPassword = userDTO.id;
             }catch(e){
                 returnBoolEmailPassword = false;
             }

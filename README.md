@@ -83,4 +83,26 @@ $ node config/server/Server.js
 
 <br>
 
+<br>
+
+<h3>Pontos de melhorias<h3>
+<p>
+    - Utilização de um ORM para mitigar SQL-injection;
+    - Utilizar Bearer tokens expiráveis;
+    - Uso do Typescript para maior segurança ao definir as variaveis, parâmetros de entrada e saída;
+    - Redis para otimizar busca no servidor;
+<p>
+
+<h3>Pontos abordados<h3>
+<p>
+
+    -   API estar documentada;
+    -   Ter validação de entrada em todos os lugares necessários;
+    -   Deixar no README pontos de melhoria para caso o sistema necessite escalar horizontalmente e quais serão os maiores desafios;
+    -   Utilizar changelog com a realidade do seu desenvolvimento;
+    -   Git tags definindo versões de release, por exemplo release 0.1.0 como encurtador criado, 0.2.0 como autenticação, 0.3.0 como operações de usuário no encurtador, 0.4.0 como contabilização de acessos;
+    -   Código tolerante a falhas;
+<p>
+
+
 <P>Muito obrigado, até mais.<P>

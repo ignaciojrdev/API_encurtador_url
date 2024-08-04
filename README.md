@@ -68,6 +68,7 @@ $ node config/server/Server.js
 <P>Para mais informações sobre a API, acesse o arquivo API_encurtador_url/Backend/docs.<P>
 
 <P>
+    
     Em API_encurtador_url/Backend/docs/Arquitetura/Descrição do projeto e pastas.txt temos a explicação da arquitetura utilizada.
 
     Em API_encurtador_url/Backend/docs/DB/Download do mysql......txt temos um link para o youtube onde realizo o download e instalação do mysql workbench. O vídeo autoral, foi criado para ajudar alguns amigos meus que há alguns meses estavam iniciando na área de programação.

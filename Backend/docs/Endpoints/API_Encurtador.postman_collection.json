@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "b5cdb3fc-476a-4e9f-9ec9-5e5c92a2fab8",
+		"name": "API_Encurtador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29176626"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/user/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "bearer_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uanJpZ25hY2lvMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwUFBQc2Q1Z21ncFo5NFF1Mkx5dzJPdTdzN0Jvd1ZUUnZCZVlzSWZ0NHRWLnFXeWQ0L0dndSIsImlhdCI6MTcyMjczNDUyMn0.V3tYNKFm6ayQqPxHGjVClAcHL7xAQzNi1obIeN7BjFU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3030/user/f62f0fb1-e9a0-48df-811b-6bcf34b119ad"
+					},
+					"response": []
+				},
+				{
+					"name": "/user/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"andersonjrignacio4@gmail.com\",\r\n    \"password\": \"12345abcde!@#$%1b3d5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3030/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "/user/",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "bearer_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uanJpZ25hY2lvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJEVKTC9ucWtJNzlNQXRPVG8yQmFKWE9venozVmV4YmZab0JYdGRIaWRkZEo2dXRVY01Za2E2IiwiaWF0IjoxNzIyNzM0NTE5fQ.WR2Q8DhhTDymkV5dxUCDSvoahdUUjuesCSUCnjogysk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"andersonjrignacio5@gmail.com\",\r\n    \"password\": \"12345abcde!@#$%1b3d5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3030/user/06f621c0-8bfc-49c3-b4ba-7a530b7e23f8"
+					},
+					"response": []
+				},
+				{
+					"name": "/user/",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "bearer_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uanJpZ25hY2lvNkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRpSkx4SmRmZC5ZT2cxT2hZRXVBNXIuVmJURndZWE5yYkpWRFZNN0JDN0xTNEI0MTVFNEJQLiIsImlhdCI6MTcyMjgwNTY5NX0.vtdfFEMHfYM1yzFPR0m8ShPKowPiCQiH-XKd3XLK_iM",
+								"type": "text"
+							}
+						],
+						"url": "localhost:3030/user/d65276a0-4984-4d6f-b127-6e73def5cd55"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shortener",
+			"item": [
+				{
+					"name": "Auth_Request",
+					"item": [
+						{
+							"name": "/:id/shortener",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "bearer_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uanJpZ25hY2lvMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwUFBQc2Q1Z21ncFo5NFF1Mkx5dzJPdTdzN0Jvd1ZUUnZCZVlzSWZ0NHRWLnFXeWQ0L0dndSIsImlhdCI6MTcyMjczNDUyMn0.V3tYNKFm6ayQqPxHGjVClAcHL7xAQzNi1obIeN7BjFU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"andersonjrignacio4@gmail.com\",\r\n    \"password\": \"12345abcde!@#$%1b3d5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3030/auth/url/f62f0fb1-e9a0-48df-811b-6bcf34b119ad/shortener"
+							},
+							"response": []
+						},
+						{
+							"name": "/:id/shortener/:short_url",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:3030/auth/url/f62f0fb1-e9a0-48df-811b-6bcf34b119ad/shortener"
+							},
+							"response": []
+						},
+						{
+							"name": "/:id/shortener/:short_url",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"url\": \"https://www.google.com/\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3030/auth/url/f62f0fb1-e9a0-48df-811b-6bcf34b119ad/shortener/a2dc49"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "/shotener/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "baerer_token",
+								"value": "12343514",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"URL\": \"https://teddy360.com.br/material/marco-legal-das-garantias-sancionado-entenda-o-que-muda/\",\r\n    \"id\": \"f62f0fb1-e9a0-48df-811b-6bcf34b119ad\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3030/url/"
+					},
+					"response": []
+				},
+				{
+					"name": "/shotener/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "bearer_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uanJpZ25hY2lvMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRwUFBQc2Q1Z21ncFo5NFF1Mkx5dzJPdTdzN0Jvd1ZUUnZCZVlzSWZ0NHRWLnFXeWQ0L0dndSIsImlhdCI6MTcyMjczNDUyMn0.V3tYNKFm6ayQqPxHGjVClAcHL7xAQzNi1obIeN7BjFU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"andersonjrignacio2@gmail.com\",\r\n    \"password\": \"12345abcde!@#$%1b3d5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3030/url/df5ab9"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

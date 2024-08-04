@@ -1,7 +1,7 @@
 {
   "name": "api_encurtador_url",
   "version": "1.0.0",
-  "description": "Api que retorna uma url encurtada. Opcional: Autenticação onde é retornado uma lista de urls encurtadas.",
+  "description": "Api que retorna uma url encurtada.",
   "main": "index.js",
   "type": "module",
   "scripts": {

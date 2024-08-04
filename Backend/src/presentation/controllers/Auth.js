@@ -37,7 +37,6 @@ class AuthController{
             return false;
         }
     }
-
 }
 export { 
     AuthController

@@ -34,19 +34,24 @@ Rotas existentes no sistema - refazer apenas em ingles ou portugues
             request body: shortURL required
             request header baerer token optional
             response body: HTTP Code + JSON(message: String (Error/Success), shortURL: String);
-    
-    /auth/shortener - required auth
-        /:id -> http method = get 
-            request query param: shortener id
-            request header baerer token
-            response body: HTTP Code + JSON(Message: String (Error/Success), Info: Array); -> lista de urls
 
-        /:id -> http method = delete
-            request query param: shortener id required
-            request header baerer token
-            response body: HTTP Code + JSON(Message: String (Error/Success),);
+        /*all ->
+            http method = get
+            request body: shortURL required
+            response body: HTTP Code + JSON(message: String (Error/Success), shortURL: String); -> lista de urls sem autenticação
 
-        /:id -> http method = put
-            request query param: shortener id required
-            request header baerer token
+    /user/{:id_user}/shortener/{:id_shortUrl} - required auth
+        {:id_user} -> http method = get 
+            request query param: user id required
+            request header baerer token / email e senha
+            response body: HTTP Code + JSON(Message: String (Error/Success), Info: Array); -> lista de urls com autenticação
+
+        {:id_user}/{:id_shortUrl} -> http method = delete
+            request query param: user id e short url  required
+            request header baerer token / email e senha
+            response body: HTTP Code + JSON(Message: String (Error/Success));
+
+        {:id_user}/{:id_shortUrl} -> http method = put
+            request query param: user id e short url required
+            request header baerer token / email e senha
             response body: HTTP Code + JSON(Message: String (Error/Success));

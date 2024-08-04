@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import { AuthController } from '../../controllers/Auth.js';
 
 export async function authenticationUser(req, res, next){
@@ -19,9 +17,26 @@ export async function authenticationUser(req, res, next){
         isValid = await new AuthController().authenticationUserOnlyEmailPassword(email, password, id);
     }
     if(!isValid){
-        return res.status(401).json({message: 'Invalid access, check your credentials. Choose a method to authenticate and try again: 1 - Token or 2 - E-mail and Password.'});
+        return res.status(401).json({message: 'Invalid access, wrong credentials. Choose a method to authenticate and try again: 1 - Token or 2 - E-mail and Password.'});
     }
     req.body.accessValidate = true;
+    next();
+}
+
+export async function authenticationUrl(req, res, next){
+    const { bearer_token } = req.headers;
+    const { email, password } = req.body;
+    const { id } = req.params;
+    let isValid = false;
+
+    if((!bearer_token && ( !email || !password )) && !id){
+        req.body.accessValidate = isValid;
+        next();
+    }
+
+    isValid = await new AuthController().authenticationUserOnlyBearerToken(bearer_token, id);
+    isValid = await new AuthController().authenticationUserOnlyEmailPassword(email, password, id);
+    
     next();
 }
 

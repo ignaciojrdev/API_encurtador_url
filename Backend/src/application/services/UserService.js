@@ -44,6 +44,10 @@ class UserService{
     validateEmailPassword = async (email, password, id) => {
         return await this.UserUseCases.validateEmailPassword(email, password, id);
     }
+
+    delete_user = async (UserDTO) => {
+        await this.UserUseCases.delete_userUseCase(UserDTO);
+    }
 }
 
 export { 

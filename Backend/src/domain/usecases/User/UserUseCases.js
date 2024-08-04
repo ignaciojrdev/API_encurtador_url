@@ -74,7 +74,6 @@ class UserUseCases{
         let user = null;
         try{
             user =  await this.getUserByEmailUseCase({email: email});
-            console.log(user, id);
             if(user.id != id){
                 throw new Error('Invalid access. The e-mail have a diferent id.');
             }
@@ -86,6 +85,10 @@ class UserUseCases{
             throw new Error('Invalid access. Incorrect password.');
         }
     }    
+
+    delete_userUseCase = async (UserDTO) => {
+        return await this.repository.delete_user(UserDTO.id);
+    }
 }
 
 export { 

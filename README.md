@@ -15,8 +15,9 @@ $ cd .\backend\
 <h3>Instale as dependências</h3>
 $ npm install
 
-<h3 Crie o arquivo .env em API_encurtador_url/Backend/, onde será necessário incluir as seguintes informações:>
+<h3>Crie o arquivo .env em API_encurtador_url/Backend/, onde será necessário incluir as seguintes informações:<h3>
 <p>
+    
     PORT_SERVER = 3030                              # porta que será utilizada para subir a aplicação; *Recomedo copiar essa linha
     BASEURL = http://localhost:3030                 # url base para utilização das urls criadas; *Recomedo copiar essa linha
 

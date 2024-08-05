@@ -87,6 +87,7 @@ $ node config/server/Server.js
 
 <h3>Pontos de melhorias<h3>
 <p>
+    
     - Utilização de um ORM para mitigar SQL-injection;
     - Utilizar Bearer tokens expiráveis;
     - Uso do Typescript para maior segurança ao definir as variaveis, parâmetros de entrada e saída;

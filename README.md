@@ -1,5 +1,5 @@
 <h1>Sistema que gera uma URL encurtada</h1>
-<p>Uma API para gerar uma URL encurtada, com banco de dados MySql.</p>
+<p>Uma API para gerar uma URL encurtada, utilizando Node.js e MySql.</p>
 
 <h2>Pré-requisitos</h2>
 <p>
